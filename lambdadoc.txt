@@ -1,0 +1,102 @@
+var arrPeople = [{ name : 'Cotrim', age : 29},{ name : 'Cotrim', age : 29},{ name : 'Lucas', age : 26},{ name : 'Renato', age : 33}];
+
+/* 
+-------------------------Functions LAMBADA-ARRAY
+Where
+arrPeople.Where(/x=>x.age>26/);//Regex
+arrPeople.Where(function(item, index, arr){ return item.age > 26 });//Function
+arrPeople.Where('x=>x.age>' + 26);//String
+
+Select
+arrPeople.Select(/x=>x.name/);//Regex
+arrPeople.Select(function(item, index, arr){ return item.name; });//Function
+arrPeople.Select('x=>x.name');//String
+
+Distinct
+arrPeople.Distinct();//por object
+arrPeople.Distinct(/x=>x.age/);//por field
+arrPeople.Distinct(function(item, index, arr){return item.age;});
+
+First - Single - Find
+arrPeople.First() - arrPeople.Single() - arrPeople.Find()
+arrPeople.First(/x=>x.name=='Cotrim'/)
+
+Last
+arrPeople.Last();
+arrPeople.Last(/x=>x.name=='Cotrim'/)
+arrPeople.First(function(item, index, arr){item.name=='Cotrim'});
+
+Count
+arrPeople.Count();
+arrPeople.Count(/x=>x.name=='Cotrim'/);
+
+Any
+arrPeople.Any();
+arrPeople.Any(/x=>x.age>30/);
+arrPeople.Any(function(item){ return item.age>30;});
+
+Eeach//somente function
+arrPeople.Each(function(item, index, arr){ item.age++;  });
+
+Aggregate//somente function
+arrPeople.Aggregate(function(agregado, item, index, arr){ return item.age>30 ? item.name : 'não encontrado';  });
+
+Sum
+arrPeople.Sum(/x=>x.age/);
+arrPeople.Sum(function(item){ return item.age; });
+['a','b','c'].Sum();//concatena strings
+arrPeople.Sum(function(item){return item.name;});//concatena strings
+
+Min//return objeto do array e não o valor
+arrPeople.Min(/item=>item.age/);
+arrPeople.Min(function(x){ return x.age; });
+arrPeople.Min(/item=>item.name/);//ordem alfabetica
+arrPeople.Min(function(x){ return x.name; });//ordem alfabetica
+['reanto', 'cotrim','lucas'].Min();//ordem alfabetica
+
+Max//return objeto do array e não o valor
+arrPeople.Max(/item=>item.age/);
+arrPeople.Max(function(x){ return x.age; });
+arrPeople.Max(/item=>item.name/);//ordem alfabetica
+arrPeople.Max(function(x){ return x.name; });//ordem alfabetica
+['reanto', 'cotrim','lucas'].Max();//ordem alfabetica
+
+Average
+arrPeople.Average(/x=>x.age/);
+arrPeople.Average(function(x){ return x.age; });
+[5,6,7,8].Average();
+
+OBS: A biblioteca Lambda injeta nas function ou regexs os campos (item, o index, e o arr) => function(item, index, arr), exceto no Aggregate, que insere o (agregado, item, index, arr) => function(agregado, item, index, arr), agregado no primeiro index é null e depois é sempre o ultimo retorno da função.
+
+-------------------------Functions ARRAY
+IndexOf//Find de item da lista serve para objetos também
+arrPeople.IndexOf({ name : 'Renato', age : 33});
+
+Contains
+arrPeople.Contains({ name : 'Renato', age : 33});
+
+Reverse//Retorna um array
+arrPeople.Reverse();
+
+-------------------------Functions Object
+Equals
+arrPeople.Equals(arrPeople);
+true.Equals(true);
+'0'.Equals(0);//false
+'0'.Equals('0');//true
+arrPeople.Min(/x=>x.age/).Equals({ name : 'Lucas', age : 26});
+
+Different
+arrPeople.Different(arrPeople);
+true.Different(true);
+'0'.Different(0);//false
+'0'.Different('0');//true
+arrPeople.Min(/x=>x.age/).Different({ name : 'Lucas', age : 26});
+
+-------------------------Functions String
+ToArray
+'cotrim'.ToArray();
+
+Equals => igual a do objeto
+*/
+
