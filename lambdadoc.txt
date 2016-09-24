@@ -80,18 +80,18 @@ arrPeople.Reverse();
 
 -------------------------Functions Object
 Equals
-arrPeople.Equals(arrPeople);
-true.Equals(true);
-'0'.Equals(0);//false
-'0'.Equals('0');//true
-arrPeople.Min(/x=>x.age/).Equals({ name : 'Lucas', age : 26});
+$l.Equals(arrPeople, arrPeople);
+$l.Equals(true, true);
+$l.Equals('0', 0);//false
+$l.Equals('0', '0');//true
+$l.Equals(arrPeople.Min(/x=>x.age/), { name : 'Lucas', age : 26});
 
 Different
-arrPeople.Different(arrPeople);
-true.Different(true);
-'0'.Different(0);//false
-'0'.Different('0');//true
-arrPeople.Min(/x=>x.age/).Different({ name : 'Lucas', age : 26});
+$l.Different(arrPeople, arrPeople);
+$l.Different(true, true);
+$l.Different('0', 0);//true
+$l.Different('0', '0');//false
+$l.Different(arrPeople.Min(/x=>x.age/), { name : 'Lucas', age : 26});
 
 -------------------------Functions String
 ToArray

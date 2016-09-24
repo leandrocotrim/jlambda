@@ -1,0 +1,13 @@
+{
+  "name": "j-lambda",
+  "description": "Lambda in Javascript",
+  "author": "Leandro Cotrim <cotrim.leandro@gmail.com>",
+  "version": "1.0.1",
+  "private": true,
+  "dependencies": {
+    "gulp": "3.9.1",
+    "gulp-minify" :"0.0.14"
+  },
+  "devDependencies": {   
+  }
+}
